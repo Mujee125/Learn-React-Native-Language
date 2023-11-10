@@ -6,16 +6,18 @@ import {
     Image,
     useColorScheme,
   } from 'react-native';
+  import {NavigationContainer} from '@react-navigation/native';
   
   export default function WelcomeScreen() {
     const colorScheme = useColorScheme();
   
     return (
-      <ScrollView 
+      <NavigationContainer>
+        <ScrollView 
         style={[
           styles.container,
-          colorScheme === 'dark'
-            ? { backgroundColor: '#fff' }
+          colorScheme === 'light'
+            ? { backgroundColor: 'green' }
             : { backgroundColor: '#333333' },
         ]}>
         <View style={styles.headerWrapper}>
@@ -58,6 +60,7 @@ import {
           to hear your experience with us!
         </Text>
       </ScrollView>
+      </NavigationContainer>
     );
   }
   
